@@ -52,3 +52,6 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../COPYING.txt"
                                                     "${CMAKE_BINARY_DIR}/dependencies/glfw-COPYTING.txt")
 
+install(TARGETS ${DEPNAME} EXPORT GLFWExp)
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/GLFW-config.cmake)
+export(PACKAGE GLFW)

@@ -54,3 +54,11 @@ endforeach()
 add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../COPYING"
                                                     "${CMAKE_BINARY_DIR}/dependencies/expat-license.txt")
+
+install(TARGETS ${DEPNAME} EXPORT ExpatExp
+        RUNTIME DESTINATION bin
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
+        )
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/EXPAT-config.cmake)
+export(PACKAGE EXPAT)

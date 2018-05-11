@@ -33,3 +33,6 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE.txt"
                                                     "${CMAKE_BINARY_DIR}/dependencies/glew-license.txt")
 
+install(TARGETS ${DEPNAME} EXPORT GLEWExp)
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/GLEW-config.cmake)
+export(PACKAGE GLEW)

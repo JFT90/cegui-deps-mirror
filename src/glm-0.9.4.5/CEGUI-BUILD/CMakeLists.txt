@@ -20,3 +20,6 @@ add_custom_command(OUTPUT "${CMAKE_BINARY_DIR}/dependencies/glm-copying.txt"
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../copying.txt"
                                                     "${CMAKE_BINARY_DIR}/dependencies/glm-copying.txt")
 
+install(TARGETS ${DEPNAME} EXPORT GLMExp)
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/GLM-config.cmake)
+export(PACKAGE GLM)

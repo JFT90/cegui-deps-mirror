@@ -349,3 +349,6 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../license-gpl.txt"
                                                     "${CMAKE_BINARY_DIR}/dependencies/freeimage-license-gpl.txt")
 
+install(TARGETS ${DEPNAME} EXPORT FreeImageExp)
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/FreeImage-config.cmake)
+export(PACKAGE FreeImage)

@@ -62,3 +62,7 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
 #Files end with .c so cmake can't decide what the hell this is
 set_target_properties(${DEPNAME} PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(${DEPNAME}_static PROPERTIES LINKER_LANGUAGE CXX)
+
+install(TARGETS ${DEPNAME} EXPORT RaqmExp)
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/Raqm-config.cmake)
+export(PACKAGE Raqm)

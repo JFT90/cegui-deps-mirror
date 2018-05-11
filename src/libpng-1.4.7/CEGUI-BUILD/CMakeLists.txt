@@ -72,3 +72,6 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE"
                                                     "${CMAKE_BINARY_DIR}/dependencies/libpng-license.txt")
 
+install(TARGETS ${DEPNAME} EXPORT LibPngExp)
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/LibPng-config.cmake)
+export(PACKAGE LibPng)

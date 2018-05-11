@@ -24,3 +24,6 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../license"
                                                     "${CMAKE_BINARY_DIR}/dependencies/tinyxml-license.txt")
 
+install(TARGETS ${DEPNAME} EXPORT TinyXMLExp)
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/TinyXML-config.cmake)
+export(PACKAGE TinyXML)

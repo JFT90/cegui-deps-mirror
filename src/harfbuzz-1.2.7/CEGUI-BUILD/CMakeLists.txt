@@ -177,3 +177,7 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
 #Files end with .cc so cmake can't decide what the hell this is
 set_target_properties(${DEPNAME} PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(${DEPNAME}_static PROPERTIES LINKER_LANGUAGE CXX)
+
+install(TARGETS ${DEPNAME} EXPORT HARFBUZZExp)
+export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/HARFBUZZ-config.cmake)
+export(PACKAGE HARFBUZZ)
