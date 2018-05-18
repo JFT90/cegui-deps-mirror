@@ -34,6 +34,5 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../README"
                                                     "${CMAKE_BINARY_DIR}/dependencies/jpeg-README.txt")
 
-install(TARGETS ${DEPNAME} EXPORT LibJpegExp)
-export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/LibJpeg-config.cmake)
-export(PACKAGE LibJpeg)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT LibJpegExp)
+export(TARGETS ${DEPNAME} FILE ${FIND_PACKAGE_SCRIPT_PATH}/LibJpeg-config.cmake)

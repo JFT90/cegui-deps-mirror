@@ -57,6 +57,5 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../LICENCE"
                                                     "${CMAKE_BINARY_DIR}/dependencies/pcre-license.txt")
 
-install(TARGETS ${DEPNAME} EXPORT PCREExp)
-export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/PCRE-config.cmake)
-export(PACKAGE PCRE)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT PCREExp)
+export(TARGETS ${DEPNAME} FILE ${FIND_PACKAGE_SCRIPT_PATH}/PCRE-config.cmake)

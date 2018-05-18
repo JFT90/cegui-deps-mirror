@@ -100,6 +100,5 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
 add_custom_command(TARGET ${DEPNAME} POST_BUILD 
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../docs/GPLv2.TXT"
                                                     "${CMAKE_BINARY_DIR}/dependencies/GPLv2.TXT")
-install(TARGETS ${DEPNAME} EXPORT FreetypeExp)
-export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/Freetype-config.cmake)
-export(PACKAGE Freetype)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT FreetypeExp)
+export(TARGETS ${DEPNAME} FILE ${FIND_PACKAGE_SCRIPT_PATH}/Freetype-config.cmake)

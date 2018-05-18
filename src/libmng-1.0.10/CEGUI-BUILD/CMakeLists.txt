@@ -39,6 +39,5 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE"
                                                     "${CMAKE_BINARY_DIR}/dependencies/libmng-license.txt")
 
-install(TARGETS ${DEPNAME} EXPORT LibMngExp)
-export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/LibMng-config.cmake)
-export(PACKAGE LibMng)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT LibMngExp)
+export(TARGETS ${DEPNAME} FILE ${FIND_PACKAGE_SCRIPT_PATH}/LibMng-config.cmake)

@@ -35,6 +35,5 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
 add_custom_command(TARGET ${DEPNAME} POST_BUILD 
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../COPYING"
                                                     "${CMAKE_BINARY_DIR}/dependencies/SILLY-license.txt")
-install(TARGETS ${DEPNAME} EXPORT SILLYExp)
-export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/SILLY-config.cmake)
-export(PACKAGE SILLY)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT SILLYExp)
+export(TARGETS ${DEPNAME} FILE ${FIND_PACKAGE_SCRIPT_PATH}/SILLY-config.cmake)

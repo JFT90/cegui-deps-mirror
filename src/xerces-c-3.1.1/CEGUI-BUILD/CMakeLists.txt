@@ -848,6 +848,5 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../NOTICE"
                                                     "${CMAKE_BINARY_DIR}/dependencies/xerces-c-notice.txt")
 
-install(TARGETS ${DEPNAME} EXPORT XercesCExp)
-export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/XercesC-config.cmake)
-export(PACKAGE XercesC)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT XercesCExp)
+export(TARGETS ${DEPNAME} FILE ${FIND_PACKAGE_SCRIPT_PATH}/XercesC-config.cmake)

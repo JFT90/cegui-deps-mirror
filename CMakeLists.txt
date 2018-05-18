@@ -16,6 +16,7 @@ endif()
 
 project(CEGUI-DEPS)
 
+message(WARNING "BUILDING CEGUI-DEPS")
 list( APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" )
 include( CEGUI-deps-macros )
 

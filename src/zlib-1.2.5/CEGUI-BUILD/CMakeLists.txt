@@ -31,6 +31,5 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../README"
                                                     "${CMAKE_BINARY_DIR}/dependencies/zlib-README.txt")
 
-install(TARGETS ${DEPNAME} EXPORT ZLibExp)
-export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/zlib-config.cmake)
-export(PACKAGE zlib)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT ZLibExp)
+export(TARGETS ${DEPNAME} FILE ${FIND_PACKAGE_SCRIPT_PATH}/zlib-config.cmake)

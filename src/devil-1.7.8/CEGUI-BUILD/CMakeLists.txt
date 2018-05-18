@@ -51,10 +51,5 @@ add_custom_command(TARGET IL POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../COPYING"
                                                     "${CMAKE_BINARY_DIR}/dependencies/devil-license.txt")
 
-install(TARGETS IL ILU EXPORT DevILExp
-        RUNTIME DESTINATION bin
-        LIBRARY DESTINATION lib
-        ARCHIVE DESTINATION lib 
-        )
-export(TARGETS IL ILU FILE ${CMAKE_BINARY_DIR}/DevIL-config.cmake)
-export(PACKAGE DevIL)
+install(TARGETS IL ILU DESTINATION ${CMAKE_BINARY_DIR} EXPORT DevILExp)
+export(TARGETS IL ILU FILE ${FIND_PACKAGE_SCRIPT_PATH}/DevIL-config.cmake)

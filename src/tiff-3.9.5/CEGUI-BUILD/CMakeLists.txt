@@ -76,6 +76,5 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../COPYRIGHT"
                                                     "${CMAKE_BINARY_DIR}/dependencies/libtiff-license.txt")
 
-install(TARGETS ${DEPNAME} EXPORT LibTiffExp)
-export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/LibTiff-config.cmake)
-export(PACKAGE LibTiff)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT LibTiffExp)
+export(TARGETS ${DEPNAME} FILE ${FIND_PACKAGE_SCRIPT_PATH}/LibTiff-config.cmake)

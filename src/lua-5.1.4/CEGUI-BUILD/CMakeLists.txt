@@ -24,6 +24,6 @@ add_custom_command(TARGET ${DEPNAME} POST_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_CURRENT_SOURCE_DIR}/../COPYRIGHT"
                                                     "${CMAKE_BINARY_DIR}/dependencies/lua-license.txt")
 
-install(TARGETS ${DEPNAME} EXPORT Lua51Exp)
+install(TARGETS ${DEPNAME} DESTINATION ${CMAKE_BINARY_DIR} EXPORT Lua51Exp)
 export(TARGETS ${DEPNAME} FILE ${CMAKE_BINARY_DIR}/Lua51-config.cmake)
 export(PACKAGE Lua51)
